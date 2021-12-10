@@ -1,5 +1,6 @@
 <?php 
 
+session_start();
     
 require __DIR__ ."/database_credentials.php";
 $error = "";
@@ -27,8 +28,9 @@ $user = null;
 $stmt->execute();
 
 $result = $stmt->get_result();
+$_SESSION["user"] = $result -> fetch_all(MYSQLI_ASSOC);
 
-if($result -> fetch_all(MYSQLI_ASSOC)) {
+if($_SESSION["user"]) {
 	header( 'Location: index.php');
 	
 }

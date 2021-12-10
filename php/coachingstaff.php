@@ -1,6 +1,12 @@
 <?php
 
 require __DIR__ ."/database_credentials_test.php";
+session_start();
+$user = $_SESSION["user"];
+
+if ($user ==null ){
+    header( 'Location: login.php');
+}
 //geting team id
 $getid = $_GET["id"] ;
 $sql = "SELECT * FROM COACHING_STAFF PL JOIN PERSON P ON PL.PERSON_ID=P.PERSON_ID where TEAM_ID = '$getid'";
@@ -13,6 +19,8 @@ $sql2 = "SELECT * FROM TEAM where TEAM_ID = '$getid'";
 $results = $conn->query($sql2);
 //fetching the team id
 $team = $results->fetch_assoc()
+
+
 
 
 

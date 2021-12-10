@@ -2,7 +2,12 @@
 
 require __DIR__ ."/database_credentials_test.php";
 //geting team id
+session_start();
+$user = $_SESSION["user"];
 
+if ($user ==null ){
+    header( 'Location: login.php');
+}
 
 $successful = false;
 $getid = $_GET["id"]; 

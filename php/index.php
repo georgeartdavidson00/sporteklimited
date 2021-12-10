@@ -51,7 +51,7 @@ require __DIR__ ."/database_credentials_test.php";
                           </div>
                       </li> 
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.php">Log out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="finances.php">Finances</a></li>

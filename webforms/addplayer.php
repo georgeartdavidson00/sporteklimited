@@ -1,6 +1,12 @@
 <?php 
  require "../php/database_credentials_test.php";
 //require "./database_credentials_test.php";
+session_start();
+$user = $_SESSION["user"];
+
+if ($user ==null ){
+    header( 'Location: login.php');
+}
 $personID= "";
 $playerID = "";
 $editID= "";

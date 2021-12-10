@@ -1,10 +1,17 @@
 <?php
 require __DIR__ ."/database_credentials_test.php";
+
 //select info from fincenter and team table
 $sql = "SELECT * FROM FINANCIAL_CENTER FC JOIN TEAM TE ON FC.TEAM_ID = TE.TEAM_ID ";
 $results = $conn->query($sql);
 //fetching all data
 $fin_datas = $results->fetch_all(MYSQLI_ASSOC);
+session_start();
+$user = $_SESSION["user"];
+
+if ($user ==null ){
+    header( 'Location: login.php');
+}
 
 
 

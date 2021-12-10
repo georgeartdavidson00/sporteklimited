@@ -1,5 +1,11 @@
 <?php
 require __DIR__ ."/database_credentials_test.php";
+session_start();
+$user = $_SESSION["user"];
+
+if ($user ==null ){
+    header( 'Location: login.php');
+}
 //geting team id
 $getid = $_GET["id"] ;
 $sql = "SELECT * FROM TEAM where TEAM_ID = '$getid'";
