@@ -1,0 +1,67 @@
+body{
+    background-image:url("../images/playersbg.png");
+    background-size: cover;
+    background-position: center;
+    
+}
+#editbtn{
+    background-color:#007bff;
+    margin-left: 150px;
+}
+#deletebtn{
+    background-color:red;
+    
+}
+
+.btn-primary {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    width: 130px;
+   position: absolute;
+   bottom:0;
+   top:0;
+   right: 0;
+   left: 0;
+   height: 40px;
+   margin-top: 500px;
+}
+.card{
+    margin-top: 30px;
+    font-size: 15px;
+    width: 300px;
+    margin-left: 20px;
+    
+}
+
+.navbar{
+    background-color: white;
+}
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: white;
+    margin-top: 1000px;
+  }
+
+
+.notification {
+    background-color: red;
+    border-radius: 3px;
+    padding: 10px;
+    max-width: 300px;
+    margin: 10px auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.notification span:last-of-type {
+    cursor: pointer;
+}
+.notification span:last-of-type:hover {
+    color: #ddd;
+}
+.hide-notification {
+    display: none;
+}

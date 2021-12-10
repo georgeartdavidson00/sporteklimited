@@ -1,0 +1,37 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  body{
+      background-image:url("../images/financebg.jpeg") ;
+      background-size: cover;
+      background-position: center;
+  }
+  .finances{
+      height: 30px;
+      width: 100px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background-color: white;
+    margin-top: 1000px;
+  }
