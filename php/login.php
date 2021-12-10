@@ -31,7 +31,7 @@ $result = $stmt->get_result();
 $_SESSION["user"] = $result -> fetch_all(MYSQLI_ASSOC);
 
 if($_SESSION["user"]) {
-	header( 'Location: index.php');
+	header( 'Location:../index.php');
 	
 }
 else {
