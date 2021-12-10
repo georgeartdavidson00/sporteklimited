@@ -11,6 +11,8 @@ $user = $_SESSION["user"];
 
 if ($user ==null ){
     header( 'Location: login.php');
+
+    
 }
 
 

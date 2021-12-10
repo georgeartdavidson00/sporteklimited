@@ -1,6 +1,12 @@
 <?php
-require __DIR__ ."/database_credentials_test.php";
+require "./php/database_credentials_test.php";
+session_start();
   $teams = [];
+  if(!isset($_SESSION['user'])){
+    header( 'Location: ./php/register.php');
+
+
+  }
   $sql = "SELECT TEAM_ID, TEAM_NAME FROM TEAM";
   $results = $conn->query($sql);
   if ($results -> num_rows > 0){
@@ -20,14 +26,14 @@ require __DIR__ ."/database_credentials_test.php";
         <meta name="author" content="" />
         <title>Sportek Limited</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
+        <link href="./css/styles.css" rel="stylesheet" />
 </head>
 <body id="page-top">
         <!-- Navigation-->
@@ -45,16 +51,16 @@ require __DIR__ ."/database_credentials_test.php";
                           <button  class="dropbtn">Teams</button>
                           <div class="dropdown-content">
                           <?php foreach($teams as $team) { ?>
-                          <a href="<?php echo 'teams.php?id='.$team["TEAM_ID"] ?>"><?php echo $team["TEAM_NAME"] ?></a>
+                          <a href="<?php echo './php/teams.php?id='.$team["TEAM_ID"] ?>"><?php echo $team["TEAM_NAME"] ?></a>
                         <?php } ?>
                           </div>
                           </div>
                       </li> 
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./php/logout.php">Log out</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="finances.php">Finances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./php/finances.php">Finances</a></li>
                         
                     </ul>
                 </div>
@@ -78,7 +84,7 @@ require __DIR__ ."/database_credentials_test.php";
                 </div>
                 <ul class="timeline">
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/1.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./assets/img/about/1.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>2019-2020</h4>
@@ -88,7 +94,7 @@ require __DIR__ ."/database_credentials_test.php";
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./assets/img/about/2.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>March 2020</h4>
@@ -98,7 +104,7 @@ require __DIR__ ."/database_credentials_test.php";
                         </div>
                     </li>
                     <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./assets/img/about/3.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>December 2021</h4>
@@ -108,7 +114,7 @@ require __DIR__ ."/database_credentials_test.php";
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="./assets/img/about/4.jpg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>July 2022</h4>
@@ -143,7 +149,7 @@ require __DIR__ ."/database_credentials_test.php";
                     <center>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="./assets/img/team/2.jpg" alt="..." />
                             <h4>George Arthur</h4>
                             <p class="text-muted">Chief Executive Officer</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -183,7 +189,7 @@ require __DIR__ ."/database_credentials_test.php";
        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
-        <script src="../javascript/scripts.js"></script>
+        <script src="./javascript/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
